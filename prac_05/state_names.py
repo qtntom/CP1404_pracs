@@ -15,4 +15,4 @@ STATE_NAMES = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Te
 #     state = input("Enter short state: ")
 
 for state in STATE_NAMES:
-    print('{:3} is {}'.format(state, STATE_NAMES[state]))
+    print('{} is {}'.format(state, STATE_NAMES[state]))
