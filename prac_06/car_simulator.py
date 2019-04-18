@@ -10,7 +10,7 @@ def main():
     user_choice = input('Enter your choice: ').upper()
     while user_choice != 'Q':
         if user_choice == 'D':
-            pass
+            drive_car(user_car)
         elif user_choice == 'R':
             pass
         else:

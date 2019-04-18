@@ -7,7 +7,7 @@ class ProgrammingLanguage:
     def __init__(self, name='', typing='Static', reflection=True, year=1990):
         self.name = name
         self.typing = typing
-        self.reflection = True
+        self.reflection = reflection
         self.year = year
 
     def is_dynamic(self):
