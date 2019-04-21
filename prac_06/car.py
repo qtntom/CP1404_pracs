@@ -16,6 +16,7 @@ class Car:
     def add_fuel(self, amount):
         """Add amount to the car's fuel."""
         self.fuel += amount
+        print('Added {} units of fuel.'.format(amount   ))
 
     def drive(self, distance):
         """Drive the car a given distance.
@@ -26,8 +27,10 @@ class Car:
         if distance > self.fuel:
             distance = self.fuel
             self.fuel = 0
+            print('The car drove {}km and ran out of fuel.'.format(distance))
         else:
             self.fuel -= distance
+            print('The car drove {}km.'.format(distance))
         self.odometer += distance
         return distance
 
