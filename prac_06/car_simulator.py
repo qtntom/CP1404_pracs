@@ -13,7 +13,6 @@ def main():
     user_choice = input('Enter your choice: ').upper()
     while user_choice != 'Q':
         if user_choice == 'D':
-            # TODO: function to drive car
             if user_car.fuel == 0:
                 print("The car has no fuel left. Please select 'r' to refuel.")
             else:
@@ -22,7 +21,6 @@ def main():
             print_menu(user_car)
             user_choice = input('Enter your choice: ').upper()
         elif user_choice == 'R':
-            # TODO: function to refuel
             refuel_amount = get_int_above_zero('How many units of fuel do you want to add to the car? ')
             user_car.add_fuel(refuel_amount)
             print_menu(user_car)
