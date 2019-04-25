@@ -25,11 +25,18 @@ def main():
     for i in range(len(subjects)):
         print(subjects[i], "Scores:")
         subject_max = score_values[0][i]
+        subject_min = score_values[0][i]
+        subject_sum = 0
         for scores in score_values:
-            print(scores[i])
+            print(scores[i], end=', ')
+            subject_sum += scores[i]
             if scores[i] > subject_max:
                 subject_max = scores[i]
-        print("Max:", subject_max)
+            if scores[i] < subject_min:
+                subject_min = scores[i]
+        print("\b\b \nMax:", subject_max)
+        print("Min:", subject_min)
+        print('Average:', subject_sum/len(score_values))
         print()
 
 
