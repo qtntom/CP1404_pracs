@@ -9,6 +9,8 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.app import StringProperty
 
+CONVERSION_RATE = 1.60934
+
 
 class MilesToKm(App):
     result = StringProperty()
@@ -19,10 +21,18 @@ class MilesToKm(App):
         return self.root
 
     def handle_conversion(self):
-        self.result = self.root.ids.input_text.text
-        # miles = float(self.root.ids.input_text.text)
-        # print(miles)
-        # self.result = miles * 1.60934
+        try:
+            miles = float(self.root.ids.input_text.text)
+            self.result = str(miles * CONVERSION_RATE)
+        except ValueError:
+            self.root.ids.input_text.text = '0'
+            self.result = '0'
+
+    def handle_increment(self, value):
+        try:
+            self.root.ids.input_text.text = str(float(self.root.ids.input_text.text) + value)
+        except ValueError:
+            self.root.ids.input_text.text = str(0 + value)
 
 
 MilesToKm().run()
