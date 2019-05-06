@@ -10,16 +10,34 @@ from kivy.uix.button import Button
 
 FILENAME = 'names_ages'
 
-def main():
-    names_ages = extract_file_data()
-    print(names_ages)
 
-def extract_file_data():
-    work_file = open(FILENAME)
-    names_ages = {}
-    for line in work_file:
-        name_age = line.strip().split(',')
-        names_ages[name_age[0]] = int(name_age[1])
-    return names_ages
+class DynamicGUI(App):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.names_ages = self.extract_file_data()
 
-main()
+    def build(self):
+        self.root = Builder.load_file('extension_4.kv')
+        self.add_widgets()
+        return self.root
+
+    def add_widgets(self):
+        for name in self.names_ages:
+            temp_button = Button(text=name, background_color=(0, 1, 1, 1))
+            temp_button.bind(on_release=self.handle_press)
+            self.root.ids.buttons_field.add_widget(temp_button)
+
+    def handle_press(self, instance):
+        self.root.ids.output_text.text = self.names_ages[instance.text]
+
+    def extract_file_data(self):
+        work_file = open(FILENAME)
+        names_ages = {}
+        for line in work_file:
+            name_age = line.strip().split(',')
+            names_ages[name_age[0]] = name_age[1]
+        work_file.close()
+        return names_ages
+
+
+DynamicGUI().run()
