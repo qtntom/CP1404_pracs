@@ -27,5 +27,6 @@ class DynamicWidgetsPrac(App):
             temp_label = Label(text=word, color=(1, 0, 0, 1))
             self.root.ids.labels_field.add_widget(temp_label)
 
+
 # TODO: how to create white labels?
 DynamicWidgetsPrac().run()

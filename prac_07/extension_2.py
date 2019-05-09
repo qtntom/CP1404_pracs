@@ -1,3 +1,9 @@
+"""
+CP1404 Prac 7 - Extension 2
+Simple GUI
+By Q.T
+"""
+
 from kivy.app import App
 from kivy.lang import Builder
 
