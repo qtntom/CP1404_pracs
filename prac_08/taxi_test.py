@@ -1,12 +1,13 @@
 """
-prac 8 - walkthrough example
+prac 8 - walkthrough  example
+Test for Taxi class
 by Q.T
 09May19
 """
 
 from prac_08.taxi import Taxi
 
-taxi1 = Taxi('Prius 1', 100, 1.23)
+taxi1 = Taxi('Prius 1', 100)
 taxi1.drive(40)
 print(taxi1)
 

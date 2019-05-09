@@ -25,6 +25,7 @@ class DynamicWidgetsPrac(App):
     def create_widgets(self):
         for word in self.words:
             temp_label = Label(text=word, color=(1, 0, 0, 1))
+            # temp_label.background_color=(1,1,1,1)
             self.root.ids.labels_field.add_widget(temp_label)
 
 
