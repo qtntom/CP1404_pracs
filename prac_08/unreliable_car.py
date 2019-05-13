@@ -5,7 +5,7 @@ from random import randint
 class UnreliableCar(Car):
     """child class of Car that has reliability rate"""
 
-    def __init__(self, reliability=1, **kwargs):
+    def __init__(self, reliability=0.0, **kwargs):
         """initialize a UnreliableCar instance, based on parent Car class and its own attribute: reliability"""
         super().__init__(**kwargs)
         self.reliability = reliability
