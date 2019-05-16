@@ -24,7 +24,7 @@ def main():
             # choose a taxi and start fare on that taxi
             print('Taxis available:')
             print_taxis(taxis)
-            current_taxi = taxis[get_taxi_number()]
+            current_taxi = taxis[get_taxi_number(len(taxis))]
             current_taxi.start_fare()
             print('Bill to date: ${:.2f}'.format(total_bill))
         elif menu_choice == 'd':
@@ -56,11 +56,20 @@ def print_menu():
     print('q)uit, c)hoose taxi, d)rive')
 
 
-def get_taxi_number():
+def get_taxi_number(max_number):
     """Get valid taxi number"""
-    # TODO: may include error checking
-    number = int(input('Choose taxi: '))
-    return number
+    is_valid_number = False
+    while not is_valid_number:
+        try:
+            number = int(input('Choose taxi: '))
+            if number < 0:
+                print('Taxi number must be greater or equal zero')
+            elif number > (max_number - 1):
+                print('Number is too high.')
+            else:
+                return number
+        except ValueError:
+            print('Invalid number!')
 
 
 main()
