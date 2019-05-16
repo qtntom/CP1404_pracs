@@ -1,5 +1,6 @@
 from prac_08.taxi import Taxi
 
+
 class SilverServiceTaxi(Taxi):
     """child class of Taxi, with price_per_km variable depending on fanciness, a new attribute"""
     flagfall = 4.5
