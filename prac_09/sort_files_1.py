@@ -9,11 +9,11 @@ def main():
     extensions = []
     filenames = os.listdir('.')
     for filename in filenames:
-        name_and_extension = os.path.splitext(filename)
-        if name_and_extension[1] not in extensions:
-            os.mkdir(name_and_extension[1][1:])
-            extensions.append(name_and_extension[1])
-        # shutil.move(filename, '/' + name_and_extension[1][1:] + '/' + filename)
+        extension = os.path.splitext(filename)[1]
+        if extension not in extensions:
+            os.mkdir(extension[1:])
+            extensions.append(extension)
+        shutil.move(filename, extension[1:] + '/' + filename)
 
 
 main()
